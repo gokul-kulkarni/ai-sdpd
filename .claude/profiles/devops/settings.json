@@ -1,0 +1,17 @@
+{
+  "model": "sonnet",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "superpowers@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(rtk *)",
+      "Bash(docker *)",
+      "Bash(docker compose *)",
+      "Bash(gh *)",
+      "Bash(bunx nx *)",
+      "Bash(bun install *)"
+    ]
+  }
+}

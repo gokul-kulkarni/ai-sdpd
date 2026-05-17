@@ -86,17 +86,21 @@ bunx nx g @nx/react:lib <name>         # shared library
 - Styling is **Tailwind CSS 3** (`apps/ai-sdpd/tailwind.config.js`); global styles in
   `src/app/global.css`.
 
-## Claude Code Role Profiles (claudectx)
+## Onboarding (run once after cloning)
 
-Role-specific Claude Code contexts are stored in `.claude/profiles/`. Each profile
-activates different plugins, permissions, and system instructions.
-
-**Install profiles** (run once after cloning, requires `claudectx`):
 ```sh
 bash scripts/setup-claude-profiles.sh
 ```
 
-**Use a role**:
+This installs two required tools via Homebrew (`Brewfile`) and sets up Claude Code
+role profiles:
+
+- **rtk** — token-optimized CLI proxy (60-90% token savings on dev operations).
+  The RTK hook is pre-configured in `.claude/settings.json` — it activates automatically
+  for everyone who opens this repo in Claude Code, no per-machine setup needed.
+- **claudectx** — role-based Claude Code sessions
+
+**Start a session in a role:**
 ```sh
 claudectx run product-owner   # PO: user stories, AI feature specs, backlog
 claudectx run web-dev         # Next.js 16, App Router, Tailwind
@@ -107,7 +111,8 @@ claudectx run qa              # Jest, Playwright, coverage
 claudectx run devops          # CI/CD, Docker, deployment
 ```
 
-Install claudectx: `brew install foxj77/tap/claudectx`
+Always use `claudectx run` (not bare `claudectx`) — it keeps your global Claude config
+untouched and allows concurrent role sessions.
 
 ## Conventions
 

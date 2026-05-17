@@ -1,0 +1,10 @@
+{
+  "name": "@ai-sdpd/ai-sdpd-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@ai-sdpd/ai-sdpd"
+    ]
+  }
+}

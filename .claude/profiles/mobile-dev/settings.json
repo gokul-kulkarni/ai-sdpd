@@ -1,0 +1,16 @@
+{
+  "model": "sonnet",
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "typescript-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(rtk *)",
+      "Bash(bunx nx *)",
+      "Bash(bun install *)",
+      "Bash(bunx expo *)"
+    ]
+  }
+}

@@ -86,6 +86,29 @@ bunx nx g @nx/react:lib <name>         # shared library
 - Styling is **Tailwind CSS 3** (`apps/ai-sdpd/tailwind.config.js`); global styles in
   `src/app/global.css`.
 
+## Claude Code Role Profiles (claudectx)
+
+Role-specific Claude Code contexts are stored in `.claude/profiles/`. Each profile
+activates different plugins, permissions, and system instructions.
+
+**Install profiles** (run once after cloning, requires `claudectx`):
+```sh
+bash scripts/setup-claude-profiles.sh
+```
+
+**Use a role**:
+```sh
+claudectx run product-owner   # PO: user stories, AI feature specs, backlog
+claudectx run web-dev         # Next.js 16, App Router, Tailwind
+claudectx run backend-dev     # NestJS, REST API, DTOs
+claudectx run mobile-dev      # Expo, React Native, Expo Router
+claudectx run db-dev          # PostgreSQL, schema, migrations
+claudectx run qa              # Jest, Playwright, coverage
+claudectx run devops          # CI/CD, Docker, deployment
+```
+
+Install claudectx: `brew install foxj77/tap/claudectx`
+
 ## Conventions
 
 - Follow the immutability and file-organization rules in the user's global rules:
